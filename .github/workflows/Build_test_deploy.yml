@@ -1,0 +1,31 @@
+name: build_test_deploy
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  build_test_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Build
+        run: |
+          echo "Building the project..."
+          echo "Build completed successfully."
+
+      - name: Test
+        run: |
+          echo "Testing the project..."
+          echo "Testing completed successfully."
+
+      - name: Deploy
+        run: |
+          echo "Deploying the project..."
+          echo "Deployment completed successfully."
