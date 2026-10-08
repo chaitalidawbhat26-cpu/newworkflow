@@ -1,10 +1,11 @@
 name: build_test_deploy
-
+#push on the branch
 on:
   push:
     branches: ["main"]
   pull_request:
     branches: ["main"]
+  #run manually in git action
   workflow_dispatch:
 
 jobs:
@@ -14,17 +15,17 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-
+#run the building code using runnershell
       - name: Build
         run: |
           echo "Building the project..."
           echo "Build completed successfully."
-
+#run the test using testing shell
       - name: Test
         run: |
           echo "Testing the project..."
           echo "Testing completed successfully."
-
+#run the deploy using running shell
       - name: Deploy
         run: |
           echo "Deploying the project..."
